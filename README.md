@@ -9,6 +9,7 @@ This project provides a complete task management solution with real-time notific
 ## 🔧 Tech Stack
 
 **Backend** ([CT240_NLXD_Phan_Mem_Nhom_3_BE](CT240_NLXD_Phan_Mem_Nhom_3_BE))
+
 - Java 17, Spring Boot 4.0.3
 - MongoDB for data storage
 - JWT authentication
@@ -16,6 +17,7 @@ This project provides a complete task management solution with real-time notific
 - Design patterns: Observer, Factory, Strategy
 
 **Frontend** ([CT240_NLXD_Phan_Mem_Nhom_3_FE](CT240_NLXD_Phan_Mem_Nhom_3_FE))
+
 - Vue 3 + Vite
 - Vuetify for UI components
 - Pinia for state management
@@ -34,18 +36,22 @@ This project provides a complete task management solution with real-time notific
 ## 🚀 Quick Start
 
 ### Backend
+
 ```bash
 cd CT240_NLXD_Phan_Mem_Nhom_3_BE
 mvn spring-boot:run
 ```
+
 Server runs on `http://localhost:8080`
 
 ### Frontend
+
 ```bash
 cd CT240_NLXD_Phan_Mem_Nhom_3_FE
 npm install
 npm run dev
 ```
+
 Access at `http://localhost:5173`
 
 ## 📂 Project Structure
@@ -55,16 +61,6 @@ CT240_NLXD_Phan_Mem_Nhom_3_BE/  # Spring Boot backend
 CT240_NLXD_Phan_Mem_Nhom_3_FE/  # Vue 3 frontend
 ```
 
-## 👥 Team
+## � Developer
 
-- Phan Trọng Phúc (B2203525) - Backend Lead
-- Lê Đình Duy (B2203494)
-- Nguyễn Khánh Duy (B2203496)
-- Nguyễn Hoàng Vinh (B2303856)
-- Nguyễn Thanh Yến Khoa (B2303823)
-- Nguyễn Kim Yến (B2303860)
-
-**Instructor**: TS. Trương Minh Thái  
-**Course**: CT240 - Software Engineering Principles  
-**Semester**: II, 2025-2026
-
+**Phạm Tấn** - Full Stack Developer
