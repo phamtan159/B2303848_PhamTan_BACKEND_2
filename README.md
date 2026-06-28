@@ -1,66 +1,112 @@
-# CT240 - Task Management System
+# Ứng dụng Quản lý Công việc Nhóm - Frontend
 
-A full-stack group task management system built with Spring Boot and Vue.js. Developed as part of the CT240 Software Engineering course.
+**Tên dự án**: CT240_NLXD_Phan_Mem_Nhom_3  
+**Môn học**: Nguyên lý Xây dựng Phần mềm (CT240)  
+**Nhóm thực hiện**: Nhóm 3  
+**Developer**: Phạm Tấn  
+**Học kỳ**: II, Năm học 2025-2026  
+**Ngày hoàn thành**: Tháng 03/2026
 
-## 📋 Overview
+## Mô tả dự án
 
-This project provides a complete task management solution with real-time notifications, role-based access control, and project collaboration features. Backend runs on Spring Boot with MongoDB, frontend built with Vue 3 and Vuetify.
+Frontend là giao diện web hiện đại cho ứng dụng quản lý công việc nhóm, xây dựng bằng **Vue.js 3** (Composition API) và **Vuetify**, kết nối Backend (Spring Boot) qua REST API. Giao diện được thiết kế theo phong cách **Glassmorphism** hiện đại, thân thiện với người dùng.
 
-## 🔧 Tech Stack
+### Chức năng chính:
+- **Xác thực & Phân quyền**: Đăng ký, Đăng nhập (JWT), Phân quyền chặt chẽ (Admin - Quản trị hệ thống, Manager - Quản lý dự án, Member - Thành viên).
+- **Dashboard**:
+  - **Admin**: Thống kê tổng quan hệ thống (User, Project, Task), biểu đồ trạng thái dự án.
+  - **Member**: Thống kê công việc cá nhân (To Do, Done), dự án tham gia, deadline sắp tới.
+- **Quản lý Dự án**:
+  - Tạo mới, cập nhật, xóa dự án.
+  - Quản lý thành viên: Thêm thành viên, duyệt yêu cầu tham gia, phân quyền trong dự án (Owner, Manager, Member).
+  - Cài đặt hiển thị dự án (Công khai/Riêng tư).
+- **Quản lý Công việc (Tasks)**:
+  - Tạo, sửa, xóa công việc.
+  - Gán người thực hiện, đặt độ ưu tiên, hạn chót.
+  - Cập nhật trạng thái (Cần làm, Đang làm, Hoàn thành, Đã hủy).
+- **Tương tác & Cộng tác**:
+  - Bình luận trong công việc với trình soạn thảo văn bản (Rich Text Editor).
+  - Đính kèm tệp tin vào bình luận.
+- **Quản lý Người dùng (Admin)**: Xem danh sách, tìm kiếm, khóa/mở khóa tài khoản, phân quyền hệ thống.
+- **Hệ thống Thông báo**:
+  - Nhận thông báo về công việc được giao, nhắc nhở hạn chót, hoặc thay đổi trong dự án.
+  - **Tương tác trực tiếp**: Quản lý dự án có thể Chấp nhận hoặc Từ chối yêu cầu tham gia của thành viên ngay tại giao diện thông báo.
+  - Đánh dấu đã đọc/chưa đọc.
+- **Báo cáo & Thống kê (Advanced)**:
+  - Biểu đồ trực quan: Theo dõi tiến độ dự án (Burn-down chart), phân bố trạng thái công việc (Pie chart).
+  - Phân tích hiệu suất: Thống kê tỷ lệ hoàn thành, danh sách công việc trễ hạn.
+  - **Xuất dữ liệu**: Hỗ trợ xuất báo cáo chi tiết ra các định dạng **PDF, Excel, CSV** phục vụ lưu trữ và in ấn.
+- **Hồ sơ cá nhân**: Cập nhật thông tin cá nhân và ảnh đại diện.
 
-**Backend** ([CT240_NLXD_Phan_Mem_Nhom_3_BE](CT240_NLXD_Phan_Mem_Nhom_3_BE))
+## Công nghệ sử dụng
 
-- Java 17, Spring Boot 4.0.3
-- MongoDB for data storage
-- JWT authentication
-- WebSocket (STOMP) for real-time updates
-- Design patterns: Observer, Factory, Strategy
+- **Framework**: Vue.js 3 (Composition API + `<script setup>`)
+- **UI Library**: **Vuetify 3** (Material Design)
+- State Management: Pinia
+- Routing: Vue Router 4
+- HTTP Client: Axios
+- Rich Text Editor: VueQuill
+- Notifications: SweetAlert2
+- Build Tool: Vite
+- Lint & Format: ESLint + Prettier
+- IDE: VS Code (với Volar extension)
+- Package Manager: npm
 
-**Frontend** ([CT240_NLXD_Phan_Mem_Nhom_3_FE](CT240_NLXD_Phan_Mem_Nhom_3_FE))
+## Cấu trúc thư mục hiện tại
 
-- Vue 3 + Vite
-- Vuetify for UI components
-- Pinia for state management
-- Axios for API calls
-- Chart.js for analytics
-
-## ✨ Features
-
-- User management with role-based access (Admin, Manager, Member)
-- Project creation and team collaboration
-- Task assignment and status tracking
-- Real-time notifications and comments
-- Activity logging and reporting
-- File attachment support
-
-## 🚀 Quick Start
-
-### Backend
-
-```bash
-cd CT240_NLXD_Phan_Mem_Nhom_3_BE
-mvn spring-boot:run
+```text
+src
+ ┣ api
+ ┃ ┣ index.js
+ ┃ ┣ projectApi.js
+ ┃ ┗ userApi.js
+ ┣ components
+ ┃ ┣ ProjectCard.vue
+ ┃ ┗ UserAvatarName.vue
+ ┣ layouts
+ ┃ ┣ AdminLayout.vue
+ ┃ ┗ MemberLayout.vue
+ ┣ router
+ ┃ ┗ index.js
+ ┣ stores
+ ┃ ┣ auth.js
+ ┃ ┣ project.js
+ ┃ ┣ task.js
+ ┃ ┗ user.js
+ ┣ views
+ ┃ ┣ admin
+ ┃ ┃ ┣ AdminDashboard.vue
+ ┃ ┃ ┣ NotificationManagement.vue
+ ┃ ┃ ┣ ProjectManagement.vue
+ ┃ ┃ ┣ ReportDetail.vue
+ ┃ ┃ ┣ ReportManagement.vue
+ ┃ ┃ ┣ TaskManagement.vue
+ ┃ ┃ ┗ UserManagement.vue
+ ┃ ┣ auth
+ ┃ ┃ ┣ Login.vue
+ ┃ ┃ ┗ Register.vue
+ ┃ ┣ member
+ ┃ ┃ ┣ notifications
+ ┃ ┃ ┃ ┗ NotificationList.vue
+ ┃ ┃ ┣ project
+ ┃ ┃ ┃ ┣ MyProjectList.vue
+ ┃ ┃ ┃ ┣ ProjectDetail.vue
+ ┃ ┃ ┃ ┣ ProjectForm.vue
+ ┃ ┃ ┃ ┣ ProjectList.vue
+ ┃ ┃ ┣ task
+ ┃ ┃ ┃ ┣ TaskDetail.vue
+ ┃ ┃ ┃ ┗ TaskList.vue
+ ┃ ┃ ┗ MemberDashboard.vue
+ ┃ ┗ profile
+ ┃ ┃ ┣ ProfileEdit.vue
+ ┃ ┃ ┗ ProfileView.vue
+ ┣ App.vue
+ ┣ main.js
 ```
 
-Server runs on `http://localhost:8080`
+## Các bước chạy local
 
-### Frontend
-
-```bash
-cd CT240_NLXD_Phan_Mem_Nhom_3_FE
-npm install
-npm run dev
-```
-
-Access at `http://localhost:5173`
-
-## 📂 Project Structure
-
-```
-CT240_NLXD_Phan_Mem_Nhom_3_BE/  # Spring Boot backend
-CT240_NLXD_Phan_Mem_Nhom_3_FE/  # Vue 3 frontend
-```
-
-## � Developer
-
-**Phạm Tấn** - Full Stack Developer
+Yêu cầu hệ thống:
+- Node.js 18+ (LTS khuyến nghị)
+- npm 9+ (hoặc pnpm/yarn)
+- Backend đang chạy tại `http://localhost:8080`
