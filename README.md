@@ -1,58 +1,59 @@
-# Ứng dụng Quản lý Công việc Nhóm - Frontend
+﻿# Task Management Frontend
 
-**Tên dự án**: CT240_NLXD_Phan_Mem_Nhom_3  
-**Môn học**: Nguyên lý Xây dựng Phần mềm (CT240)  
-**Nhóm thực hiện**: Nhóm 3  
+**Project Name**: CT240_NLXD_Phan_Mem_Nhom_3  
+**Course**: Software Engineering Principles (CT240)  
+**Team**: Team 3  
 **Developer**: Phạm Tấn  
-**Học kỳ**: II, Năm học 2025-2026  
-**Ngày hoàn thành**: Tháng 03/2026
+**Semester**: II, Academic Year 2025-2026  
+**Completion Date**: March 2026
 
-## Mô tả dự án
+## Project Description
 
-Frontend là giao diện web hiện đại cho ứng dụng quản lý công việc nhóm, xây dựng bằng **Vue.js 3** (Composition API) và **Vuetify**, kết nối Backend (Spring Boot) qua REST API. Giao diện được thiết kế theo phong cách **Glassmorphism** hiện đại, thân thiện với người dùng.
+The frontend is a modern web interface for a team task management application. It is built with **Vue.js 3** (Composition API) and **Vuetify**, and it connects to the backend (Spring Boot) via REST API. The interface uses a clean, glassmorphism-inspired design that focuses on usability.
 
-### Chức năng chính:
-- **Xác thực & Phân quyền**: Đăng ký, Đăng nhập (JWT), Phân quyền chặt chẽ (Admin - Quản trị hệ thống, Manager - Quản lý dự án, Member - Thành viên).
+### Key Features:
+
+- **Authentication & Authorization**: Register, login with JWT, and enforce role-based access control for Admin, Manager, and Member.
 - **Dashboard**:
-  - **Admin**: Thống kê tổng quan hệ thống (User, Project, Task), biểu đồ trạng thái dự án.
-  - **Member**: Thống kê công việc cá nhân (To Do, Done), dự án tham gia, deadline sắp tới.
-- **Quản lý Dự án**:
-  - Tạo mới, cập nhật, xóa dự án.
-  - Quản lý thành viên: Thêm thành viên, duyệt yêu cầu tham gia, phân quyền trong dự án (Owner, Manager, Member).
-  - Cài đặt hiển thị dự án (Công khai/Riêng tư).
-- **Quản lý Công việc (Tasks)**:
-  - Tạo, sửa, xóa công việc.
-  - Gán người thực hiện, đặt độ ưu tiên, hạn chót.
-  - Cập nhật trạng thái (Cần làm, Đang làm, Hoàn thành, Đã hủy).
-- **Tương tác & Cộng tác**:
-  - Bình luận trong công việc với trình soạn thảo văn bản (Rich Text Editor).
-  - Đính kèm tệp tin vào bình luận.
-- **Quản lý Người dùng (Admin)**: Xem danh sách, tìm kiếm, khóa/mở khóa tài khoản, phân quyền hệ thống.
-- **Hệ thống Thông báo**:
-  - Nhận thông báo về công việc được giao, nhắc nhở hạn chót, hoặc thay đổi trong dự án.
-  - **Tương tác trực tiếp**: Quản lý dự án có thể Chấp nhận hoặc Từ chối yêu cầu tham gia của thành viên ngay tại giao diện thông báo.
-  - Đánh dấu đã đọc/chưa đọc.
-- **Báo cáo & Thống kê (Advanced)**:
-  - Biểu đồ trực quan: Theo dõi tiến độ dự án (Burn-down chart), phân bố trạng thái công việc (Pie chart).
-  - Phân tích hiệu suất: Thống kê tỷ lệ hoàn thành, danh sách công việc trễ hạn.
-  - **Xuất dữ liệu**: Hỗ trợ xuất báo cáo chi tiết ra các định dạng **PDF, Excel, CSV** phục vụ lưu trữ và in ấn.
-- **Hồ sơ cá nhân**: Cập nhật thông tin cá nhân và ảnh đại diện.
+  - **Admin**: Overview of users, projects, and tasks, including project status charts.
+  - **Member**: Personal task summary, joined projects, and upcoming deadlines.
+- **Project Management**:
+  - Create, update, and delete projects.
+  - Manage project team members: add members, approve join requests, and assign roles (Owner, Manager, Member).
+  - Set project visibility to Public or Private.
+- **Task Management**:
+  - Create, edit, and delete tasks.
+  - Assign tasks, set priorities, and define deadlines.
+  - Update task status (To Do, In Progress, Done, Cancelled).
+- **Collaboration & Interaction**:
+  - Add comments to tasks with a rich text editor.
+  - Attach files to comments.
+- **User Management (Admin)**: View user lists, search users, lock or unlock accounts, and manage roles.
+- **Notification System**:
+  - Receive alerts for assigned tasks, deadline reminders, and project updates.
+  - Project managers can approve or reject membership requests from the notification panel.
+  - Mark notifications as read or unread.
+- **Reporting & Analytics**:
+  - Visual charts to monitor project progress and task distribution.
+  - Performance metrics for completion rates and overdue tasks.
+  - Export detailed reports to PDF, Excel, or CSV formats.
+- **User Profile**: Update personal information and profile avatar.
 
-## Công nghệ sử dụng
+## Technology Stack
 
 - **Framework**: Vue.js 3 (Composition API + `<script setup>`)
-- **UI Library**: **Vuetify 3** (Material Design)
+- **UI Library**: Vuetify 3
 - State Management: Pinia
 - Routing: Vue Router 4
 - HTTP Client: Axios
 - Rich Text Editor: VueQuill
 - Notifications: SweetAlert2
 - Build Tool: Vite
-- Lint & Format: ESLint + Prettier
-- IDE: VS Code (với Volar extension)
+- Linting and Formatting: ESLint + Prettier
+- IDE: VS Code (with Volar extension)
 - Package Manager: npm
 
-## Cấu trúc thư mục hiện tại
+## Folder Structure
 
 ```text
 src
@@ -92,7 +93,7 @@ src
  ┃ ┃ ┃ ┣ MyProjectList.vue
  ┃ ┃ ┃ ┣ ProjectDetail.vue
  ┃ ┃ ┃ ┣ ProjectForm.vue
- ┃ ┃ ┃ ┣ ProjectList.vue
+ ┃ ┃ ┃ ┗ ProjectList.vue
  ┃ ┃ ┣ task
  ┃ ┃ ┃ ┣ TaskDetail.vue
  ┃ ┃ ┃ ┗ TaskList.vue
@@ -104,9 +105,9 @@ src
  ┣ main.js
 ```
 
-## Các bước chạy local
+## Local Setup
 
-Yêu cầu hệ thống:
-- Node.js 18+ (LTS khuyến nghị)
-- npm 9+ (hoặc pnpm/yarn)
-- Backend đang chạy tại `http://localhost:8080`
+Requirements:
+- Node.js 18+ (LTS recommended)
+- npm 9+ (or pnpm/yarn)
+- Backend running at `http://localhost:8080`
